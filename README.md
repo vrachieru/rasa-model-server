@@ -30,7 +30,7 @@ docker build -t <yourname>/rasa-model-server .
 Specify your desired configuration and run the container:
 ```bash
 $ docker run -<d|i> --rm \
-    -v /host/path/to/models:/models \
+    -v /host/path/to/models:/app/models \
     -p <host_port>:8080 \
     vrachieru/rasa-model-server
 ```
