@@ -2,7 +2,7 @@
     <img src="https://user-images.githubusercontent.com/5860071/61949755-7dbca580-afb4-11e9-87b6-1187933cccfb.png" width="200" border="0" alt="rasa-model-server">
     <br/>
     <a href="https://github.com/vrachieru/rasa-model-server/releases/latest">
-        <img src="https://img.shields.io/badge/version-1.0-brightgreen.svg?style=flat-square" alt="Version">
+        <img src="https://img.shields.io/badge/version-1.0.0-brightgreen.svg?style=flat-square" alt="Version">
     </a>
     <a href="https://hub.docker.com/r/vrachieru/rasa-model-server/">
         <img src="https://img.shields.io/docker/stars/vrachieru/rasa-model-server.svg?style=flat-square" />
@@ -14,6 +14,13 @@
     Simple webserver for externalizing RASA models.
 </p>
 
+### About
+
+You can [configure RASA to fetch models](https://rasa.com/docs/rasa/user-guide/running-the-server/#fetching-models-from-a-server) from this server either by:  
+1. pointing to a specific model (`.tar.gz`) and overriding said file when you want the model to change  
+`http://localhost:8080/bot/model.tar.gz`  
+2. pointing to a folder (suffixing the url with `@latest`) containing multiple models (`.tar.gz`) and getting the latest model sorted by modified date  
+`http://localhost:8080/bot@latest`
 
 ### Quick start
 

@@ -13,18 +13,18 @@
         <h1>{{ path }}</h1>
         <hr/>
         <table>
-            {% if parent_path %}
+            {% if path != '.' %}
             <tr>
                 <td>
-                    <a href="{{ url_for('serve', path=parent_path) }}">../</a>
+                    <a href="{{ url_for('serve', path=parent_path) | replace('%5C', '/') }}">..{{ sep }}</a>
                 </td>
             </tr>
             {% endif %}
             {% for entry in entries %}
             <tr>
                 <td>
-                    <a href="{{ url_for('serve', path=entry.rel_path) }}">
-                        {{ entry.name|truncate(50, True) }}{% if entry.is_dir %}/{% endif %}
+                    <a href="{{ url_for('serve', path=entry.rel_path) | replace('%5C', '/') }}">
+                        {{ entry.name|truncate(50, True) }}{% if entry.is_dir %}{{ sep }}{% endif %}
                     </a>
                 </td>
                 <td>{{ entry.created_time }}</td>
