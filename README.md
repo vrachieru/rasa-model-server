@@ -14,6 +14,13 @@
     Simple webserver for externalizing RASA models.
 </p>
 
+### About
+
+You can [configure RASA to fetch models](https://rasa.com/docs/rasa/user-guide/running-the-server/#fetching-models-from-a-server) from this server either by:  
+1. pointing to a specific model (`.tar.gz`) and overriding said file when you want the model to change  
+`http://localhost:8080/bot/model.tar.gz`  
+2. pointing to a folder (suffixing the url with `@latest`) containing multiple models (`.tar.gz`) and getting the latest model sorted by modified date  
+`http://localhost:8080/bot@latest`
 
 ### Quick start
 
